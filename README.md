@@ -104,7 +104,7 @@ PROJECT_PATH="<ABSOLUTE_PROJECT_PATH>"
 
 docker pull ajesus37/pyspark-docker
 
-docker run --rm -it ajesus37/pyspark-docker -p 8888:8888 -v $PROJECT_PATH:/home/user/udacity_project
+docker run --rm -it -p 8888:8888 -v $PROJECT_PATH:/home/user/udacity_project ajesus37/pyspark-docker bash
 
 cd /home/user/udacity_project
 
