@@ -15,7 +15,9 @@
     1. [The data was increased by 100x](#data_increses_100x)
     2. [The pipelines would be run on a daily basis by 7am](#pipelines_run_daily)
     3. [The database needed to be accessed by 100+ people](#access_by_100_users)
-6. [How to use this project](#how_to_use_this_project)
+6. [Data Dictionary](#data_dictionary)
+7. [How to use this project](#how_to_use_this_project)
+8. [Log Analysis Scenario](#log_analysis)
     
     
 ---
@@ -92,6 +94,11 @@ Apache Airflow could be used as the scheduler to run the specific tasks as noteb
 Apache spark is a tool that work well with large data, but to address the large number of users, a tool that can manage the user and access part of Spark is [Databricks](databricks.com/) (althought it's a paid tool).
 
 
+<a name="data_dictionary"></a>
+## Data dictionary
+
+You can find the detail of what is every field in both datasets in the file `Data Dictionary.md`.
+
 <a name="how_to_use_this_project"></a>
 ## How to use this project
 
@@ -108,7 +115,7 @@ docker run --rm -it -p 8888:8888 -v $PROJECT_PATH:/home/user/udacity_project aje
 
 cd /home/user/udacity_project
 
-bash auxiliary/unpack_raw_dataset.sh
+python3 ETL.py
 
 pyspark
 
@@ -121,4 +128,10 @@ pyspark
 3. Decompress the raw dataset inside the project folder;
 4. Start JupyterLabs with pyspark backend already working;
 
-After that, get the url with 127.0.0.1 in it from the terminal output and paste it in your browser. The first notebook you need to run in order to use the files is the `ETL.ipynb`, it will generate the datalake from the raw logs. Now you just need to navigate through files and execute the notebooks as wished.
+After that, get the url with 127.0.0.1 in it from the terminal output and paste it in your browser. Now you just need to navigate through files and execute the notebooks as wished.
+
+
+<a name="log_analysis"></a>
+## Log Analysis Scenario
+
+To show what can be done using these 2 datasets together, the notebook `Log Analysis Scenario.ipynb` shows an investigation of a malicious website accessed by a given host in the network, and it uses the network and host logs to determine what software called the malicious website.
